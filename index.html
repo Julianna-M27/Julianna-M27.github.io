@@ -3,98 +3,223 @@
 <head>
     <meta charset="UTF-8" />
     <title>Julianna Morena's Personal Website</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: rgb(10, 10, 90);
+            padding: 15px 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            opacity: 0.7;
+        }
+
+        .navbar ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .navbar ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .navbar ul li a:hover {
+            background-color: rgb(30, 30, 150);
+        }
+
+        /* Section Styling */
+        section {
+            background-color: rgb(5, 5, 73);
+            width: 60%;
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        /* Text Area */
+        .text {
+            width: 60%;
+            padding-right: 20px;
+        }
+
+        /* Image Styling */
+        .image img {
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Quote Styling */
+        #quote {
+            text-align: center;
+            background-color: rgb(5, 5, 73);
+            width: 60%;
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        #quote p {
+            font-style: italic;
+            font-size: 1.5em;
+        }
+
+        /* External Links Styling */
+        .links div {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .links a img {
+            width: 50px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .links a img:hover {
+            transform: scale(1.2);
+        }
+
+        strong {
+            color: rgb(159, 34, 15);
+        }
+
+        .icons {
+             display: flex;
+             justify-content: center; /* Centers horizontally */
+             align-items: center; /* Centers vertically */
+             gap: 20px; /* Adds spacing between icons */
+            margin-top: 10px;
+        }
+        
+        .links
+        {
+            background-color: rgb(5, 5, 73);
+            width: 60%;
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+   
+    </style>
 </head>
-<style>
-body{
-    background-color: black;
-    color: white;
-}
-
-section{
-    background-color: rgb(5, 5, 73);
-    width: 500px;
-    display: block;
-    margin: 50px;
-}
-
-img{
-    width: 150px;
-}
-
-li {
-  display: inline;
-}
-
-a {
-
-  padding: 8px;
-  background-color: rgb(5, 5, 73);
-}
-
-</style>
 <body>
     <h1>Julianna Morena's Personal Website</h1>
 
-      <!-- navigation bar w/ list-->
-   <nav class="navbar">
-    <ul> <!-- links to jump to sections-->
-     <li><a href="#bio">Bio</a></li>
-     <li><a href="#skills">Skills</a></li>
-     <li><a href="#experience">Experience</a></li>
-     <li><a href="#links">External Links</a></li>
-    </ul>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#bio">Bio</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#links">External Links</a></li>
+        </ul>
     </nav>
- 
- 
-    
+
     <main>
 
-    <section id="quote">
-    <p>“Be the change that you wish to see in the world.” </p>
-    </section>
+        <div id="quote">
+            <p>“Be the change that you wish to see in the world.”</p>
+        </div>
 
-    <section id="bio">
-    <h1>Biography</h1>
-    <p>I am a nineteen year old student who is currently attending Simon Fraser University. This is my second year in the
-       Computing Science program, and I live locally in Coquitlam. Some fun facts about
-       me include that I have a dog, I was born in the states, and I enjoy reading books in my spare time.
-    </p>
-    <img src="images/sfu.jpg"><img>
-    </section>
+        <section id="bio">
+            <div class="text">
+                <h1>Biography</h1>
+                <p>
+                    I am a nineteen-year-old student currently attending Simon Fraser University. This is my second year in the
+                    Computing Science program, and I live locally in Coquitlam. Some fun facts about me: I have a dog, I was born
+                    in the States, and I enjoy reading books in my spare time.
+                </p>
+            </div>
+            <div class="image">
+                <img src="images/sfu.jpg" alt="SFU Campus">
+            </div>
+        </section>
 
-    <section id="skills">
-        <h1>Skills</h1>
-        <p><u>Hard Skills</u>: I am familar with Python, C, C++, HTML, CSS, and React. Additionally, I am knowledgable in mathematical fields such as
-           calculus, applied linear algebra, and discrete mathematics.
-           <br>
-           <br>
-           <u>Soft Skills</u>: I am willing to take the responsibility of leadership, I value communication and respect when working in teams, and I am adept in
-           adapting to any difficult or unfamilar situation.
-        </p>
-    <img src="images/code.avif"><img>
-    </section>
+        <section id="skills">
+            <div class="text">
+                <h1>Skills</h1>
+                <p>
+                    <strong>Hard Skills:</strong> I am familiar with Python, C, C++, HTML, CSS, and React. Additionally, I am knowledgeable in
+                    mathematical fields such as calculus, applied linear algebra, and discrete mathematics.
+                </p>
+                <p>
+                    <strong>Soft Skills:</strong> I take responsibility in leadership roles, value communication and respect in teamwork, and
+                    adapt quickly to difficult or unfamiliar situations.
+                </p>
+            </div>
+            <div class="image">
+                <img src="images/code.avif" alt="Programming Code">
+            </div>
+        </section>
 
-    <section id="experience">
-        <h1>Experience</h1>
-        <p>
-       
-        I have experience working in a customer service position for three years. In this position, I was trusted with closing the store and locking up anything valuable.
-        As well, I have cooked in an industry-grade kitchen which gave me experience operating in a high-stress environment. Lastly, I have built a functional dungeon crawler video game in Python.
-      
-        </p>
-    <img src="images/experience.jpg"><img>
-    </section>
+        <section id="experience">
+            <div class="text">
+                <h1>Experience</h1>
+                <p>
+                    I have three years of experience working in a customer service position. In this role, I was trusted with closing the store
+                    and securing valuables. Additionally, I have experience cooking in an industry-grade kitchen, which taught me to work efficiently
+                    in high-stress environments. Lastly, I have built a functional dungeon crawler video game in Python.
+                </p>
+            </div>
+            <div class="image">
+                <img src="images/experience.jpg" alt="Experience Image">
+            </div>
+        </section>
 
-    <section id="links">
-       <h1>External Links</h1>
-       <h3>Find me on:</h3>
-       <div>
-       <a href="https://github.com/Julianna-M27"> <img src="images/github.png"><img></a>
-       <a href="https://www.instagram.com/julianna_aam05/"> <img src="images/Instagram_icon.png"><img></a>
-       <a href="https://www.linkedin.com/in/julianna-morena-5b7b0534b"><img src="images/linkin.png"></a>
-       </div>
-    </section>
-   
+        <div id="links" class="links">
+            <h1>External Links</h1>
+
+            <h3>Find me on:</h3>
+           
+            <div class="icons">
+                <a href="https://github.com/Julianna-M27">
+                    <img src="images/github.png" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/julianna_aam05/">
+                    <img src="images/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/julianna-morena-5b7b0534b">
+                    <img src="images/linkin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+
     </main>
 </body>
 </html>
