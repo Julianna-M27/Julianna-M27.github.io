@@ -8,7 +8,7 @@
         /* General Styling */
 
 body {
-    background-color: black;
+    background-image: linear-gradient(270deg, rgb(18, 18, 18), rgb(10, 9, 76));
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: larger;
@@ -35,49 +35,13 @@ h1 {
     }
 }
 
-/* Navigation Bar */
-.navbar {
-    background-color: rgb(10, 10, 90);
-    padding: 15px 0;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    opacity: 0.9;
-    transition: 0.5s ease-in-out;
-}
 
-/* Navigation Links Hover Effect */
-.navbar ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-align: center;
-}
 
-.navbar ul li {
-    display: inline;
-    margin: 0 15px;
-}
 
-.navbar ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
-}
-
-/* Hover Effect for Navigation */
-.navbar ul li a:hover {
-    background-color: rgb(30, 30, 150);
-    transform: scale(1.1);
-}
 
 /* Section Styling */
 section {
-    background-color: rgb(5, 5, 73);
+    background-image: linear-gradient(180deg, rgb(21, 10, 176), rgb(92, 39, 177));
     width: 60%;
     margin: 80px auto;
     padding: 30px;
@@ -109,6 +73,10 @@ section {
 .text {
     width: 60%;
     padding-right: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 1s ease-in-out forwards;
+    
 }
 
 /* Image Styling */
@@ -117,6 +85,7 @@ section {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: bounce 1.5s infinite alternate ease-in-out;
 }
 
 /* Hover Effect for Images */
@@ -128,7 +97,7 @@ section {
 /* Quote Styling */
 #quote {
     text-align: center;
-    background-color: rgb(5, 5, 73);
+    background-image: linear-gradient(180deg, rgb(21, 10, 176), rgb(92, 39, 177));
     width: 60%;
     margin: 80px auto;
     padding: 30px;
@@ -184,7 +153,7 @@ section {
 
 /* Links Section */
 .links {
-    background-color: rgb(5, 5, 73);
+    background-image: linear-gradient(180deg, rgb(21, 10, 176), rgb(92, 39, 177));
     width: 60%;
     margin: 80px auto;
     padding: 30px;
@@ -208,7 +177,7 @@ section {
 }
 
 /* Section Hover Effect */
-section:hover, #quote:hover, .links:hover {
+section:hover, #quote:hover, .links:hover, .title:hover {
     border: 3px solid rgba(0, 102, 255, 0.7); /* Glowing blue border */
     box-shadow: 0px 0px 15px rgba(0, 102, 255, 0.7); /* Glow effect */
     transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -223,7 +192,7 @@ section:hover, #quote:hover, .links:hover {
     overflow: hidden;
     border-right: 3px solid white; /* Blinking cursor effect */
     width: 0;
-    animation: typing 5s steps(40, end) forwards, blink 0.8s infinite;
+    animation: typing 6s steps(40, end) forwards, blink 0.8s infinite;
 }
 
 /* Typing Animation */
@@ -232,7 +201,7 @@ section:hover, #quote:hover, .links:hover {
         width: 0;
     }
     to {
-        width: 57%;
+        width: 95%;
     }
 }
 
@@ -265,6 +234,77 @@ section:hover, #quote:hover, .links:hover {
     padding: 11px;
    
 }
+
+/* Links Section */
+.title {
+    background-image: linear-gradient(180deg, rgb(21, 10, 176), rgb(92, 39, 177));
+    width: 60%;
+    margin: 80px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Animated Navbar */
+.navbar {
+    background-image: linear-gradient(180deg, rgb(21, 10, 176), rgb(92, 39, 177));
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-size: larger;
+   
+    transition: all 0.5s ease-in-out;
+}
+
+/* Navbar Shrink Effect */
+.navbar.shrink {
+    padding: 10px 0;
+    background-image: linear-gradient(180deg, rgb(15, 8, 120), rgb(70, 30, 140));
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Navbar Links */
+.navbar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+/* Navbar Link Glow Effect */
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Glowing Hover Effect */
+.navbar ul li a:hover {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 15px rgba(0, 102, 255, 0.8);
+    transform: scale(1.1);
+}
+
+/* Smooth Transition for Navbar */
+.navbar,
+.navbar ul li a {
+    transition: all 0.4s ease-in-out;
+}
+
    
     </style>
 
@@ -303,8 +343,9 @@ section:hover, #quote:hover, .links:hover {
     <br>
     <br>
     <br>
+    <div class="title">
     <h1 class="typing"><u>Julianna Morena's Personal Website</u></h1>
-
+    </div>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <ul>
@@ -390,5 +431,17 @@ section:hover, #quote:hover, .links:hover {
         </div>
 
     </main>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("shrink");
+            } else {
+                navbar.classList.remove("shrink");
+            }
+        });
+    </script>
+    
 </body>
 </html>
