@@ -183,16 +183,20 @@ section:hover, #quote:hover, .links:hover, .title:hover {
     transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Typing Effect */
 .typing {
     display: inline-block;
     font-size: 2.5em;
     font-weight: bold;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.typing span {
+    display: inline-block;
     border-right: 3px solid white; /* Blinking cursor effect */
+    padding-right: 2px; /* Small padding to prevent overshooting */
     width: 0;
-    animation: typing 6s steps(40, end) forwards, blink 0.8s infinite;
+    animation: typing 3s steps(40, end) forwards, blink 0.8s infinite;
 }
 
 /* Typing Animation */
@@ -201,7 +205,7 @@ section:hover, #quote:hover, .links:hover, .title:hover {
         width: 0;
     }
     to {
-        width: 95%;
+        width: 30ch; /* Adjust based on text length */
     }
 }
 
@@ -211,6 +215,7 @@ section:hover, #quote:hover, .links:hover, .title:hover {
         border-color: transparent;
     }
 }
+
 
 .arrow {
   border: solid rgb(255, 255, 255);
@@ -248,7 +253,7 @@ section:hover, #quote:hover, .links:hover, .title:hover {
     animation: fadeIn 1s ease-in-out forwards;
 }
 
-/* Animated Navbar */
+
 .navbar {
     background-image: linear-gradient(180deg, rgb(21, 10, 176), rgb(92, 39, 177));
     padding: 20px 0;
@@ -315,8 +320,12 @@ section:hover, #quote:hover, .links:hover, .title:hover {
     <br>
     <br>
     <div class="title">
-    <h1 class="typing"><u>Julianna Morena's Personal Website</u></h1>
+        <h1 class="typing">
+            <span id="typing-text">Julianna Morena's Personal Website</span>
+        </h1>
     </div>
+    
+    
     <!-- Navigation Bar -->
     <nav class="navbar">
         <ul>
@@ -453,6 +462,13 @@ section:hover, #quote:hover, .links:hover, .title:hover {
     function updateQuote() {
         document.getElementById("quote-text").textContent = quotes[currentQuoteIndex];
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    let typingElement = document.querySelector(".typing");
+    let textContent = typingElement.dataset.text;
+    typingElement.style.width = textContent.length + "ch"; // Set width dynamically based on characters
+});
+
     </script>
     
 </body>
